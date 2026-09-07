@@ -1,5 +1,5 @@
 # ARADURU File Format Test Corpus
-
+**Live corpus:** https://teamaraduru-hub.github.io/araduru-file-format-test-corpus/
 A small public corpus of **synthetic files** for testing file-format detection, structural validation, upload troubleshooting, and QA workflows.
 
 No sample contains personal data, credentials, production documents, or user-uploaded content.
