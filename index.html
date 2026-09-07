@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ARADURU File Format Test Corpus</title>
+<meta name="description" content="Synthetic XLSX, DOCX, PPTX, ZIP, and PDF files for testing file-format detection, structural validation, upload troubleshooting, and QA workflows.">
+<link rel="canonical" href="https://teamaraduru-hub.github.io/araduru-file-format-test-corpus/">
+<meta property="og:title" content="ARADURU File Format Test Corpus">
+<meta property="og:description" content="A public synthetic corpus for testing healthy and intentionally broken XLSX, DOCX, PPTX, ZIP, and PDF files.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://teamaraduru-hub.github.io/araduru-file-format-test-corpus/">
+<style>
+body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;margin:0;color:#1f2328;background:#fff;line-height:1.6}
+main{max-width:920px;margin:0 auto;padding:48px 20px 72px}
+h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.1;margin-bottom:12px}
+h2{margin-top:42px}.lead{font-size:1.16rem;max-width:760px}
+.notice{padding:14px 16px;border:1px solid #d0d7de;border-radius:8px;margin:24px 0}
+table{width:100%;border-collapse:collapse;margin:18px 0}th,td{border:1px solid #d0d7de;padding:10px;text-align:left;vertical-align:top}
+footer{margin-top:52px;padding-top:20px;border-top:1px solid #d0d7de;font-size:.95rem}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Dataset",
+  "name":"ARADURU File Format Test Corpus",
+  "description":"Synthetic healthy and intentionally broken XLSX, DOCX, PPTX, ZIP, and PDF files for file validation, structural analysis, upload troubleshooting, and QA workflows.",
+  "url":"https://teamaraduru-hub.github.io/araduru-file-format-test-corpus/",
+  "version":"1.0.0",
+  "license":"https://creativecommons.org/publicdomain/zero/1.0/",
+  "creator":{"@type":"Organization","name":"ARADURU","url":"https://araduru.com/"}
+}
+</script>
+</head>
+<body>
+<main>
+<nav><a href="https://araduru.com/">ARADURU</a> · <a href="https://github.com/teamaraduru-hub/araduru-file-format-test-corpus">GitHub repository</a></nav>
+<h1>ARADURU File Format Test Corpus</h1>
+<p class="lead">A public collection of synthetic files for testing file-format detection, structural validation, upload troubleshooting, and QA workflows.</p>
+
+<div class="notice"><strong>Safe synthetic samples.</strong> No file in this corpus comes from user uploads, production documents, credentials, or personal data.</div>
+
+<h2>Included samples</h2>
+<table>
+<thead><tr><th>Format</th><th>Healthy</th><th>Broken</th><th>Broken condition</th></tr></thead>
+<tbody>
+<tr><td>XLSX</td><td><a href="samples/xlsx/healthy-basic.xlsx">healthy-basic.xlsx</a></td><td><a href="samples/xlsx/broken-missing-workbook.xlsx">broken-missing-workbook.xlsx</a></td><td>Required <code>xl/workbook.xml</code> part removed</td></tr>
+<tr><td>DOCX</td><td><a href="samples/docx/healthy-basic.docx">healthy-basic.docx</a></td><td><a href="samples/docx/broken-missing-document-xml.docx">broken-missing-document-xml.docx</a></td><td>Required <code>word/document.xml</code> part removed</td></tr>
+<tr><td>PPTX</td><td><a href="samples/pptx/healthy-basic.pptx">healthy-basic.pptx</a></td><td><a href="samples/pptx/broken-missing-presentation-xml.pptx">broken-missing-presentation-xml.pptx</a></td><td>Required <code>ppt/presentation.xml</code> part removed</td></tr>
+<tr><td>ZIP</td><td><a href="samples/zip/healthy-basic.zip">healthy-basic.zip</a></td><td><a href="samples/zip/broken-truncated-central-directory.zip">broken-truncated-central-directory.zip</a></td><td>ZIP end / central-directory tail truncated</td></tr>
+<tr><td>PDF</td><td><a href="samples/pdf/healthy-basic.pdf">healthy-basic.pdf</a></td><td><a href="samples/pdf/broken-truncated.pdf">broken-truncated.pdf</a></td><td>PDF trailer / end section truncated</td></tr>
+</tbody>
+</table>
+
+<h2>What these files are for</h2>
+<p>Use the corpus to reproduce file-open, file-validation, file-upload, and format-detection behavior without sharing real documents. Each sample is small and deterministic, so developers and QA teams can reuse the same file across test runs.</p>
+
+<h2>Manifest and verification</h2>
+<p>The repository includes <a href="manifest.json"><code>manifest.json</code></a> with the expected condition, file size, and SHA-256 hash for every sample.</p>
+
+<h2>Try the files with ARADURU</h2>
+<ul>
+<li><a href="https://araduru.com/file-check/">File Check</a></li>
+<li><a href="https://araduru.com/upload-check/">Upload Check</a></li>
+<li><a href="https://araduru.com/upload-problems/">Upload Problems</a></li>
+<li><a href="https://araduru.com/tools/">All Tools</a></li>
+</ul>
+
+<h2>License</h2>
+<p>The sample files and metadata are released under <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal</a>.</p>
+
+<footer>Maintained by <a href="https://github.com/teamaraduru-hub">ARADURU on GitHub</a>.</footer>
+</main>
+</body>
+</html>
