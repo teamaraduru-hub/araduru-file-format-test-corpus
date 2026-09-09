@@ -1,6 +1,6 @@
 {
   "name": "ARADURU File Format Test Corpus",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "CC0-1.0",
   "synthetic_only": true,
   "samples": [
@@ -83,6 +83,86 @@
       "demonstrates": "Simple structurally healthy synthetic file",
       "size_bytes": 603,
       "sha256": "8b1173e1cae43f66b787cb93cbe911cd9e237c95d8414ac8ad5825efd6799c14"
+    },
+    {
+      "path": "samples/xlsx/renamed-extension.xlsx",
+      "format": "XLSX",
+      "state": "broken",
+      "demonstrates": "Extension/content mismatch: valid PDF bytes saved with .xlsx extension",
+      "size_bytes": 610,
+      "sha256": "26647b848d3df1dfa3011d39d9531b6829ab237c5c552ff95dfea81cd0d36fb3"
+    },
+    {
+      "path": "samples/xlsx/truncated-xlsx.xlsx",
+      "format": "XLSX",
+      "state": "broken",
+      "demonstrates": "OOXML ZIP container truncated near central directory/end record",
+      "size_bytes": 1527,
+      "sha256": "02f7ce6cb14de0431893d6714fb169c7c69c22051d5d63850b3a243906b53af6"
+    },
+    {
+      "path": "samples/docx/renamed-extension.docx",
+      "format": "DOCX",
+      "state": "broken",
+      "demonstrates": "Extension/content mismatch: valid PDF bytes saved with .docx extension",
+      "size_bytes": 610,
+      "sha256": "26647b848d3df1dfa3011d39d9531b6829ab237c5c552ff95dfea81cd0d36fb3"
+    },
+    {
+      "path": "samples/docx/truncated-docx.docx",
+      "format": "DOCX",
+      "state": "broken",
+      "demonstrates": "OOXML ZIP container truncated near central directory/end record",
+      "size_bytes": 890,
+      "sha256": "f77e4d5504ec695025b967e9f6d72f36fb9842ea14c8a65399f3ba1d7b5a64c3"
+    },
+    {
+      "path": "samples/pptx/renamed-extension.pptx",
+      "format": "PPTX",
+      "state": "broken",
+      "demonstrates": "Extension/content mismatch: valid PDF bytes saved with .pptx extension",
+      "size_bytes": 610,
+      "sha256": "26647b848d3df1dfa3011d39d9531b6829ab237c5c552ff95dfea81cd0d36fb3"
+    },
+    {
+      "path": "samples/pptx/truncated-pptx.pptx",
+      "format": "PPTX",
+      "state": "broken",
+      "demonstrates": "OOXML ZIP container truncated near central directory/end record",
+      "size_bytes": 1633,
+      "sha256": "5c06b62f1cd292c77b9780c06e1ce2695845d35e59209fc917236df7d7c6792f"
+    },
+    {
+      "path": "samples/zip/empty-archive.zip",
+      "format": "ZIP",
+      "state": "edge",
+      "demonstrates": "Structurally valid ZIP archive containing zero entries",
+      "size_bytes": 22,
+      "sha256": "8739c76e681f900923b900c9df0ef75cf421d39cabb54650c4b9ad19b6a76d85"
+    },
+    {
+      "path": "samples/zip/invalid-signature.zip",
+      "format": "ZIP",
+      "state": "broken",
+      "demonstrates": "File uses .zip extension but does not contain a ZIP local-file signature",
+      "size_bytes": 80,
+      "sha256": "19ea614545e907f0b356668d76999195dc41d5a4324130a4ff5b0fa15401fa27"
+    },
+    {
+      "path": "samples/pdf/wrong-extension.pdf",
+      "format": "PDF",
+      "state": "broken",
+      "demonstrates": "Extension/content mismatch: valid ZIP bytes saved with .pdf extension",
+      "size_bytes": 187,
+      "sha256": "07b6e4cfc5e9d2f82c49345f1a98aa07da21d06369c54d23e1f194cb2e9c1b7a"
+    },
+    {
+      "path": "samples/pdf/missing-eof.pdf",
+      "format": "PDF",
+      "state": "broken",
+      "demonstrates": "PDF header and objects present but final %%EOF marker removed",
+      "size_bytes": 604,
+      "sha256": "c7413248f7a99187a45b3e1af766f0543ceb06cd3490438a8cce7cc39d290e6f"
     }
   ]
 }

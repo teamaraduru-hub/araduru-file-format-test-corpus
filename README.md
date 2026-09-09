@@ -1,18 +1,35 @@
 # ARADURU File Format Test Corpus
+
 **Live corpus:** https://teamaraduru-hub.github.io/araduru-file-format-test-corpus/
+
 A small public corpus of **synthetic files** for testing file-format detection, structural validation, upload troubleshooting, and QA workflows.
 
 No sample contains personal data, credentials, production documents, or user-uploaded content.
 
 ## What is included
 
-| Format | Healthy sample | Broken sample | Broken sample demonstrates |
+| Format | Healthy sample | Original broken sample | Original broken sample demonstrates |
 |---|---|---|---|
 | XLSX | `healthy-basic.xlsx` | `broken-missing-workbook.xlsx` | Required `xl/workbook.xml` part removed |
 | DOCX | `healthy-basic.docx` | `broken-missing-document-xml.docx` | Required `word/document.xml` part removed |
 | PPTX | `healthy-basic.pptx` | `broken-missing-presentation-xml.pptx` | Required `ppt/presentation.xml` part removed |
 | ZIP | `healthy-basic.zip` | `broken-truncated-central-directory.zip` | ZIP end / central-directory tail truncated |
 | PDF | `healthy-basic.pdf` | `broken-truncated.pdf` | PDF trailer / end section truncated |
+
+## v1.1 additional fixtures
+
+| Format | Fixture | State | Demonstrates |
+|---|---|---|---|
+| XLSX | `renamed-extension.xlsx` | broken | Valid PDF content saved with an `.xlsx` extension |
+| XLSX | `truncated-xlsx.xlsx` | broken | Truncated OOXML ZIP container |
+| DOCX | `renamed-extension.docx` | broken | Valid PDF content saved with a `.docx` extension |
+| DOCX | `truncated-docx.docx` | broken | Truncated OOXML ZIP container |
+| PPTX | `renamed-extension.pptx` | broken | Valid PDF content saved with a `.pptx` extension |
+| PPTX | `truncated-pptx.pptx` | broken | Truncated OOXML ZIP container |
+| ZIP | `empty-archive.zip` | edge | Valid ZIP archive with zero entries |
+| ZIP | `invalid-signature.zip` | broken | `.zip` extension without a ZIP signature |
+| PDF | `wrong-extension.pdf` | broken | Valid ZIP content saved with a `.pdf` extension |
+| PDF | `missing-eof.pdf` | broken | PDF missing its final `%%EOF` marker |
 
 ## Why this corpus exists
 
@@ -31,7 +48,7 @@ All files in this repository were generated specifically for this public corpus.
 
 They are **not copied from user uploads or private production data**.
 
-Broken files were created by deterministic structural changes such as removing a required OOXML part or truncating the end of a container.
+Broken files were created by deterministic structural changes such as removing a required OOXML part, truncating a container, removing a final marker, or deliberately mismatching the extension and actual file signature.
 
 See [`manifest.json`](manifest.json) for SHA-256 hashes and the expected structural condition of every sample.
 
